@@ -14,7 +14,7 @@ public class Listing {
       }
     }
     catch (IOException ex) {
-      System.out.println("Unable to read file: PrintUsage.txt");
+      System.out.println("Unable to read file: Menu.txt");
     }
   }
   public void task() {
