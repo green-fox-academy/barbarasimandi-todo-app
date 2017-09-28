@@ -1,2 +1,2 @@
 # barbarasimandi-todo-app
-My todo app
+barbarasimandi's to-do app
