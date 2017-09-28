@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Adding {
 
-  List<String> input;
+  List<String> inputList;
 
   public void task(String input) {
     try {
