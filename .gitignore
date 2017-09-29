@@ -4,4 +4,4 @@ out
 *.xml
 *.iml
 
-# *.class
+*.class
