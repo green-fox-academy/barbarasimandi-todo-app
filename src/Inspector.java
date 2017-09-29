@@ -1,9 +1,3 @@
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-
 public class Inspector {
 
   String[] args;
@@ -18,7 +12,11 @@ public class Inspector {
       listing.task();
     }
     else if (args[0].equals("-a")) {
-      adding.task(args[1]);
+      try {
+        adding.append(args[1]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Unable to add: no task provided");
+      }
     }
   }
   public void inspectDefault() {
