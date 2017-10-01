@@ -1,9 +1,16 @@
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Task {
-  String taskName;
-  boolean completed;
+
+  private String name;
+  private boolean completed;
 
   public Task(String name) {
-    this.taskName = name;
+    this.name = name;
+    this.completed = false;
   }
 
   public void complete() {
@@ -12,7 +19,6 @@ public class Task {
 
   @Override
   public String toString() {
-    return (completed ? "[x] " : "[ ] ") + taskName;
+    return (completed ? "[x] " : "[ ] ") + name;
   }
-
 }

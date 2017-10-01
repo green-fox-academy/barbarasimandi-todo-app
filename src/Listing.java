@@ -5,6 +5,8 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Listing {
+  ListManipulating listManipulating = new ListManipulating();
+
   public void menu() {
     try {
       Path filePath = Paths.get("C:/greenfox/barbarasimandi-todo-app/src/Menu.txt");
@@ -24,8 +26,14 @@ public class Listing {
       if (lines2.size() == 0) {
         System.out.println("No todos for today :)");
       } else {
-        for (int i = 0; i < lines2.size(); i++) {
-          System.out.println((i + 1) + " - " + lines2.get(i));
+        if (listManipulating.completed) {
+          for (int i = 0; i < lines2.size(); i++) {
+            System.out.println((i + 1) + " - " + " [x] " + lines2.get(i));
+          }
+        } else {
+          for (int i = 0; i < lines2.size(); i++) {
+            System.out.println((i + 1) + " - " + " [ ] " + lines2.get(i));
+          }
         }
       }
     } catch (IOException e) {
