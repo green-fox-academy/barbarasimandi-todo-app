@@ -1,1 +1,4 @@
-Feed the monkey
+-Feed cat
+-Sleep
++Do sport
+-Drink water

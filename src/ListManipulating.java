@@ -18,7 +18,7 @@ public class ListManipulating {
   public void append(String input) {
     try {
       List<String> lines = new ArrayList<>();
-      lines.add(input);
+      lines.add("-" + input);
       Files.write(filePath, lines, StandardOpenOption.APPEND);
     } catch (IOException e) {
       e.printStackTrace();
@@ -36,27 +36,19 @@ public class ListManipulating {
     }
   }
 
-  public boolean complete(String toBeCompleted) {
+  public void complete(String toBeCompleted) {
+    completed = true;
     int index = Integer.parseInt(toBeCompleted);
-    return this.completed = true;
-
-    /*try {
-      Path filePath = Paths.get("C:/greenfox/barbarasimandi-todo-app/src/tasks.txt");
+    try {
       ArrayList<String> lines = new ArrayList<>(Files.readAllLines(filePath));
-      for (int i = 0; i < lines.size() - 1; i++) {
+      for (int i = 0; i < 1; i++) {
         if (completed) {
-          lines.set(index - 1, "[x] " + lines.get(index-1));
+          lines.set(index - 1, "+" + lines.get(index-1).substring(1));
         }
       }
       Files.write(filePath, lines);
     } catch (IOException e) {
       e.printStackTrace();
-    }*/
+    }
   }
 }
-
-  /*@Override
-  public String toString() {
-    return (completed ? "[x] " : "[ ] ") + name;
-  }
-}*/

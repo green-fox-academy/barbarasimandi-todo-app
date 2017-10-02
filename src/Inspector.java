@@ -1,3 +1,4 @@
+
 public class Inspector {
 
   String[] args;
@@ -31,8 +32,16 @@ public class Inspector {
         System.out.println("Unable to remove: index is not a number");
       }
     }
-    else if(args[0].equals("-c")) {
-      checking.complete(args[1]);
+    else if( args[0].equals("-c")) {
+      try {
+        checking.complete(args[1]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Unable to check: no index provide");
+      } catch (IndexOutOfBoundsException e) {
+        System.out.println("Unable to check: index is out of bound");
+      } catch (NumberFormatException e) {
+        System.out.println("Unable to check: index is not a number");
+      }
     }
     else {
       System.out.println("Unsupported argument\n");

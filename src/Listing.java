@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Listing {
+
   ListManipulating listManipulating = new ListManipulating();
 
   public void menu() {
@@ -14,11 +15,11 @@ public class Listing {
       for (String s : lines) {
         System.out.println(s);
       }
-    }
-    catch (IOException ex) {
+    } catch (IOException ex) {
       System.out.println("Unable to read file: Menu.txt");
     }
   }
+
   public void task() {
     try {
       Path filePath2 = Paths.get("C:/greenfox/barbarasimandi-todo-app/src/tasks.txt");
@@ -26,13 +27,12 @@ public class Listing {
       if (lines2.size() == 0) {
         System.out.println("No todos for today :)");
       } else {
-        if (listManipulating.completed) {
-          for (int i = 0; i < lines2.size(); i++) {
-            System.out.println((i + 1) + " - " + " [x] " + lines2.get(i));
+        for (int i = 0; i < lines2.size(); i++) {
+          if (lines2.get(i).charAt(0) == '+') {
+            System.out.println((i + 1) + " - " + " [x] " + lines2.get(i).substring(1));
           }
-        } else {
-          for (int i = 0; i < lines2.size(); i++) {
-            System.out.println((i + 1) + " - " + " [ ] " + lines2.get(i));
+          else {
+            System.out.println((i + 1) + " - " + " [ ] " + lines2.get(i).substring(1));
           }
         }
       }
@@ -41,3 +41,6 @@ public class Listing {
     }
   }
 }
+
+
+

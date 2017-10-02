@@ -2,9 +2,8 @@ public class ToDo {
 
   public static void main(String[] args) {
 
-    Inspector inspectArgs = new Inspector();
-    inspectArgs.inspectArgs(args);
-
+    Inspector inspectArgumentsObject = new Inspector();
+    inspectArgumentsObject.inspectArgs(args);
 
 
   }
